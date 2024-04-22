@@ -9,7 +9,6 @@
 html,
 body {
   height: 100%;
-
   width: 100%;
 }
 *::selection {
@@ -25,26 +24,27 @@ body::-webkit-scrollbar {
 body {
   overflow-x: hidden;
 }
+
 #nav {
   height: 130px;
   width: 100%;
   /* background-color: red; */
   display: flex;
   align-items: center;
-  padding: 0 120px;
+  padding:0 120px;
   gap: 50px;
   position: fixed;
   justify-content: flex-start;
-  z-index: 999;
+  z-index: 99;
 }
 #nav img {
   height: 4.5vw;
 }
 #nav h4 {
-  text-transform: uppercase;
+  text-transform: uppercase; 
   font-weight: 500;
   cursor: pointer;
-  font-size: 1.15vw;
+  font-size: 1.15vw; 
 }
 video {
   height: 100%;
@@ -56,7 +56,7 @@ video {
 
 #main {
   position: relative;
-  background-color: ;
+  /* background-color: ; */
 }
 
 #page1 {
@@ -76,7 +76,7 @@ video {
   position: relative;
 }
 #page1 h1::before {
-  content: "EAT. DRINK. PLAY.";
+  content: "COSPACE SUCCESS";
   position: absolute;
   color: #000;
   top: -5px;
@@ -217,51 +217,161 @@ video {
   z-index: 10;
 }
 .card {
-  height: 80%;
-  width: 24%;
-  /* background-color: blue; */
-  border-radius: 20px;
-  background-size: cover;
-  background-position: center;
   overflow: hidden;
-  transition: all ease 0.6s;
-}
-#card1 {
-  background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
-}
-#card2 {
-  background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4-1024x1024.jpg?strip=all&lossy=1&sharp=1&ssl=1);
-}
-#card3 {
-  background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
-}
-.overlay {
-  height: 100%;
-  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  width: 14rem;
+  height: auto;
   background-color: #f75129;
-  padding: 30px;
-  padding-top: 160px;
+  background-image: radial-gradient(
+      circle at 0% 0%,
+      rgb(37, 7, 44) 15%,
+      rgba(0, 0, 0, 0) 75%
+    ),
+    radial-gradient(
+      circle at 100% 100%,
+      rgb(25, 2, 31, 0.9) 15%,
+      rgba(0, 0, 0, 0) 150%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(24, 8, 28, 0) 0%,
+      rgb(65, 48, 143) 50%,
+      rgba(24, 8, 28, 0) 100%
+    );
+  border-radius: 0.5rem;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  background-color:#f75129;
+  background-image: linear-gradient(
+    0deg,
+    rgb(203, 79, 34) 0%,
+    rgb(178, 110, 46) 75%
+  );
+  border-radius: 9999px;
+  box-shadow: 0 1px 5px 3px rgb(199, 95, 228), 0 0 30px 5px rgb(199, 95, 228);
+}
+
+.card .title {
+  font-size: 1rem;
+  color: white;
+  font-weight: 600;
+}
+
+.card .pricing {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 600;
+}
+
+.card .pricing .pricing-time,
+.card .sub-title {
+  font-size: 0.75rem;
+  color:#fff;
+  font-weight: 500;
+}
+
+.card .list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  color: white;
+  font-weight: 500;
+  list-style: none;
+}
+
+.card .list .list-item .check {
+  margin-right: 0.25rem;
+  font-size: 1rem;
+  color: #f75129;
+  font-weight: 900;
+}
+
+.card .button {
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+  height: fit-content;
+  background: hsla(12, 93%, 56%, 1);
+
+background: linear-gradient(135deg, hsla(12, 93%, 56%, 1) 15%, hsla(228, 53%, 21%, 1) 100%);
+
+background: -moz-linear-gradient(135deg, hsla(12, 93%, 56%, 1) 15%, hsla(228, 53%, 21%, 1) 100%);
+
+background: -webkit-linear-gradient(135deg, hsla(12, 93%, 56%, 1) 15%, hsla(228, 53%, 21%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F75129", endColorstr="#192452", GradientType=1 );
+  font-size: 0.75rem;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 2px 1px rgb(122, 48, 143);
+  transition: all 0.3s cubic-bezier(1, 0, 0, 1);
+}
+
+.card .button .text-button {
+  position: relative;
+  z-index: 10;
+}
+
+.card .button::before,
+.card .button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+}
+.card .button::before {
+  left: 0;
+  background: hsla(12, 93%, 56%, 1);
+
+  background: linear-gradient(135deg, hsla(12, 93%, 56%, 1) 15%, hsla(228, 53%, 21%, 1) 100%);
+  
+  background: -moz-linear-gradient(135deg, hsla(12, 93%, 56%, 1) 15%, hsla(228, 53%, 21%, 1) 100%);
+  
+  background: -webkit-linear-gradient(135deg, hsla(12, 93%, 56%, 1) 15%, hsla(228, 53%, 21%, 1) 100%);
+  
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F75129", endColorstr="#192452", GradientType=1 );
+}
+.card .button::after {
+  right: 0;
+  background: hsla(12, 93%, 56%, 1);
+
+background: linear-gradient(135deg, hsla(12, 93%, 56%, 1) 15%, hsla(228, 53%, 21%, 1) 100%);
+
+background: -moz-linear-gradient(135deg, hsla(12, 93%, 56%, 1) 15%, hsla(228, 53%, 21%, 1) 100%);
+
+background: -webkit-linear-gradient(135deg, hsla(12, 93%, 56%, 1) 15%, hsla(228, 53%, 21%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F75129", endColorstr="#192452", GradientType=1 );
+}
+
+.card .button:hover {
+  box-shadow: 0px 0px 20px 0 #f75129
+}
+
+.card .button:hover::before,
+.card .button:hover::after {
+  width: 0;
   opacity: 0;
-  transition: all ease 0.6s;
 }
-.overlay h4 {
-  color: #000;
-  font-size: 40px;
-  text-transform: uppercase;
-  white-space: nowrap;
-  margin-bottom: 20px;
-  font-weight: 800;
-}
-.overlay p {
-  color: #000;
-  font-size: 18px;
-}
-.card:hover .overlay {
-  opacity: 1;
-}
-.card:hover {
-  transform: rotate3d(-1, 1, 0, 20deg);
-}
+
 
 #green-div {
   height: 30vh;
@@ -452,15 +562,14 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F75129", en
 }
 
 
-
-.card p {
+.fcard p {
   font-size: 17px;
   font-weight: 400;
   line-height: 20px;
   color: #666;
 }
 
-.card p.small {
+.fcard p.small {
   font-size: 14px;
 }
 
@@ -493,7 +602,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F75129", en
   font-family: courier, sans;
 }
 
-.card1 {
+.fcard1 {
   display: block;
   position: relative;
   max-width: 262px;
@@ -506,7 +615,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F75129", en
   overflow: hidden;
 }
 
-.card1:before {
+.fcard1:before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -529,21 +638,21 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F75129", en
   transition: transform 0.25s ease-out;
 }
 
-.card1:hover:before {
+.fcard1:hover:before {
   transform: scale(21);
 }
 
-.card1:hover p {
+.fcard1:hover p {
   transition: all 0.3s ease-out;
   color: rgba(255, 255, 255, 0.8);
 }
 
-.card1:hover h3 {
+.fcard1:hover h3 {
   transition: all 0.3s ease-out;
   color: #fff;
 }
 
-.card2 {
+.fcard2 {
   display: block;
   top: 0px;
   position: relative;
@@ -558,7 +667,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F75129", en
   border: 1px solid #f2f8f9;
 }
 
-.card2:hover {
+.fcard2:hover {
   transition: all 0.2s ease-out;
   box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
   top: -4px;
@@ -566,7 +675,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F75129", en
   background-color: white;
 }
 
-.card2:before {
+.fcard2:before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -589,11 +698,11 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F75129", en
   transition: transform 0.15s ease-out;
 }
 
-.card2:hover:before {
+.fcard2:hover:before {
   transform: scale(2.15);
 }
 
-.card3 {
+.fcard3 {
   display: block;
   top: 0px;
   position: relative;
@@ -607,26 +716,26 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F75129", en
   border: 1px solid #f2f8f9;
 }
 
-.card3 .go-corner {
+.fcard3 .go-corner {
   opacity: 0.7;
 }
 
-.card3:hover {
+.fcard3:hover {
   border: 1px solid #00838d;
   box-shadow: 0px 0px 999px 999px rgba(255, 255, 255, 0.5);
   z-index: 500;
 }
 
-.card3:hover p {
+.fcard3:hover p {
   color: #00838d;
 }
 
-.card3:hover .go-corner {
+.fcard3:hover .go-corner {
   transition: opactiy 0.3s linear;
   opacity: 1;
 }
 
-.card4 {
+.fcard4 {
   display: block;
   top: 0px;
   position: relative;
@@ -640,7 +749,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F75129", en
   border: 1px solid #ccc;
 }
 
-.card4 .go-corner {
+.fcard4 .go-corner {
   background: hsla(12, 93%, 56%, 1);
 
   background: linear-gradient(135deg, hsla(12, 93%, 56%, 1) 15%, hsla(228, 53%, 21%, 1) 100%);
@@ -660,25 +769,25 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F75129", en
   background-image: linear-gradient(-45deg, #8f479a 1%, #dc2a74 100%);
 }
 
-.card4 .go-arrow {
+.fcard4 .go-arrow {
   transform: skew(-6deg);
   margin-left: -2px;
   margin-top: 9px;
   opacity: 0;
 }
 
-.card4:hover {
+.fcard4:hover {
   border: 1px solid #cd3d73;
 }
 
-.card4 h3 {
+.fcard4 h3 {
   margin-top: 8px;
 }
 
-.card4:hover .go-corner {
+.fcard4:hover .go-corner {
   margin-right: -12px;
 }
 
-.card4:hover .go-arrow {
+.fcard4:hover .go-arrow {
   opacity: 1;
 }
